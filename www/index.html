@@ -39,6 +39,16 @@
       msg += "</table>";
       $("#message").html(msg);
     }
+
+    function searchName(){
+        let TestDataClass = ncmb.DataStore(db);
+        let name= $("#name").val();
+        TestDataClass.equalTo("name", name).fetchAll()
+        .then(function(results) {
+          showResults(results);
+        })
+    }
+
   </script>
 </head>
 
